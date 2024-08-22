@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Somador</title>
+</head>
+<body>
+    <h1>Somador de dois números inteiros</h1>
+    <form action="#" th:action="@{/}" method="post">
+        <label for="numero1">1° número:</label>
+        <input type="number" id="numero1" name="numero1" required th:value="${numero1 != null ? numero1 : ''}">
+        <br><br>
+        <label for="numero2">2° número:</label>
+        <input type="number" id="numero2" name="numero2" required th:value="${numero2 != null ? numero2 : ''}">
+        <br><br>
+        <button type="submit">Somar</button>
+    </form>
+
+    <!-- Result Section -->
+    <div th:if="${soma != null}">
+        <h2>Resultado</h2>
+        <p>A soma de <span th:text="${numero1}"></span> e 
+           <span th:text="${numero2}"></span> é 
+           <strong th:text="${soma}"></strong></p>
+    </div>
+</body>
+</html>
